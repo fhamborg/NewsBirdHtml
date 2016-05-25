@@ -1,0 +1,50 @@
+.cell-content {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0.5em;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.33;
+    color: rgba(0, 0, 0, 0.8);
+    font-smoothing: antialiased;
+}
+
+/* used to vertically center the text */
+.cell-content .textcontainer {
+    vertical-align:middle; 
+    display:table-cell;
+}
+
+.cell-content .textcontainer p {
+    text-align: center;
+    font-size: 1.4em;
+    max-height: 7em;
+    overflow: hidden;
+}
+
+#tooltip {
+/*    position: absolute;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;*/
+}
+
+#tooltip.hidden {
+/*    display: none;*/
+}
+
+#tooltip p {
+/*    margin: 0;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 20px;*/
+}

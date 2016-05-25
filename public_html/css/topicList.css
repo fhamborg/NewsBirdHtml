@@ -1,0 +1,16 @@
+.topicList {
+}
+
+.additionalInfo {
+    height:85vh !IMPORTANT;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#infoTopicList {
+    margin-top: 0;
+}
+
+.topicList > .isSelected {
+    background-color: #cce2ff !IMPORTANT;
+}

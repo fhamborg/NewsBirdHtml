@@ -53,19 +53,47 @@
         <link rel="stylesheet" type="text/css" href="css/flag-icon.css">
 
     </head>
-    <body>
+    <body style="overflow:hidden">
         <!-- tooltip for the matrix visualization -->
         <div id="tooltip" class="ui popup">
             <p><span id="value"></p>
         </div>
 
-        <!-- top menu in overview -->
-        <div class="ui form" id='queryOptionsForm' style="margin-top:10px; margin-left:10px">
+    <form class="ui form" id='queryOptionsForm' >
 
-            <div class="fields">
-                <div class="field">
-                    <label style="vertical-align:top"> Publisher Country </label>
-                    <div class="ui multiple selection dropdown" style="width:300px">
+        <div class="ui grid" style="padding:20px; background-color:#EEEEEE">
+            <div class="seven wide column">
+                <div class="inline field">
+                    <label style="width:120px">Search Terms</label>
+                    <div class="ui input">
+                        <input style="width:400px" id="searchTerms" type="text" placeholder="Search Terms"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seven wide column">
+                <div class="inline field">
+                    <label  style="width:120px">Date</label>
+                    <div class="ui input">
+                        <input style="width:199px" id="from" type="text" placeholder="From"/>
+                    </div>
+                    <div class="ui input">
+                        <input style="width:199px" id="to" type="text" placeholder="To"/>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="two wide column" style="position:relative">
+                <div id="queryBtn" class="ui olive submit button" style="width:75px; height:35px; position: absolute; ">Query</div>                
+                <div id="cancelBtn" class="mini ui icon button" style="display: none; position: absolute; right:30px; z-index:9000">
+                    <i class="remove icon"></i>
+                </div>             
+            </div>
+            
+            <div class="seven wide column">
+                <div class="inline field">
+                    <label style="width:120px"> Publisher Country </label>
+                    <div class="ui multiple search selection dropdown">
                         <input type="hidden" name="PublisherCountryDropdown" id="PublisherCountryDropdown">                 
                         <i class="dropdown icon"></i>
                         <div class="default text">Select Countries</div>
@@ -314,11 +342,13 @@
                             <div class="item" data-value="zw"><i class="zw flag"></i>Zimbabwe</div>
                         </div>
                     </div>
-                </div>    
-
-                <div class="field">
-                    <label style="vertical-align:top"> Topic Country </label>
-                    <div class="ui multiple selection dropdown" style="width:300px">
+                </div>
+            </div>
+            
+            <div class="seven wide column">
+                <div class="inline field">
+                    <label  style="width:120px"> Topic Country </label>
+                    <div class="ui multiple search selection dropdown">
                         <input type="hidden" name="MentionedCountryDropdown" id="MentionedCountryDropdown">
                         <i class="dropdown icon"></i>
                         <div class="default text">Select Countries</div>
@@ -568,49 +598,14 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!--      <div class="fields">
-                        <div class="field">
-                          <label>Row Values</label>
-                          <input id="rowDimSelectedValues" type="text" >
-                        </div>
-                        <div class="field">
-                          <label>Column Values</label>
-                          <input id="colDimSelectedValues" type="text" >
-                        </div>
-                        <div class="field">
-                          <label>Search Terms</label>
-                          <input type="text" placeholder="Search Terms">
-                        </div>
-                -->
-                <div class="fields">
-                    <div class="field">
-                        <label>From</label>
-                        <div class="ui input">
-                            <input id="from" type="text" placeholder="yyyymmdd"/>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>To</label>
-                        <div class="ui input">
-                            <input id="to" type="text" placeholder="yyyymmdd"/>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <label>Search Terms</label>
-                        <div class="ui input">
-                            <input id="searchTerms" type="text" placeholder="Search Terms"/>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div id="queryBtn" class="ui submit button">Query</div>
-                    </div>
-                </div>
+                
             </div>
+            <div class="two wide column">
+                <div id="resetBtn" class="ui reset button" style="width:75px; height:35px">Reset</div>
+            </div>
+            
         </div>
+    </form>
 
         <!--<a class="active item">
             <i class="home icon"></i> NewsBird
@@ -664,20 +659,22 @@
         </div>
 
         <!-- This is where the main body content belongs -->
-        <div id="bodyContent" class="pusher" style="margin-top: 10px; height: 85vh;"> <!-- margin because of the sticky menu bar -->
+        <div id="bodyContent" class="pusher" style="height: 90vh;"> <!-- margin because of the sticky menu bar -->
 
-            <div class="ui grid"> 
-                <div class="four wide column">
+            <div class="ui grid" style="margin: 0"> 
+                <div class="four wide column" style="margin: 0">
                     <!-- Side bar with additional information -->
-                    <div class="ui segment" id="infoArticle">
+                    
+                     <div class="ui segment" id="infoArticle" style="height: 90vh;">
                         <div class="mini ui icon button right floated" id="infoArticleListBtnClose">
                             <i class="remove icon"></i>
                         </div>
-                        <h3 id="infoArticleListTitle"></h3>
-
+                        <div>
+                            <h3 id="infoArticleListTitle"></h3>
+                        </div>
                         <div id="infoArticleList" class="ui divided selection list additionalInfo">
                         </div>
-                    </div>
+                    </div>                   
 
                     <div class="ui segment" id="infoTopic">
                         <!--<div class="ui dropdown">
@@ -702,8 +699,11 @@
                         <div id="infoTopicList" class="ui divided selection list topicList additionalInfo">
                         </div>
                     </div>
+                    
+
+                    
                 </div>
-                <div class="twelve wide column">
+                <div class="twelve wide column" style="margin: 0">
                     <!-- Main visualization -->
                     <div class="ui segment" style="height: 90vh;" >
                         <!-- Our visualization -->

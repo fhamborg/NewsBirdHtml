@@ -130,7 +130,7 @@ function ImageQueryHandler() {
                 if (article !== null) {
                     //console.log("found article");
                     that.getImageFromWebsite(article.url, function (imgUrl) {
-                        //console.log(imgUrl);
+                        console.log(imgUrl);
                         if (imgUrl !== null) {
                             $.jStorage.set(storagePrefixForArticleId + articleId, imgUrl);
                             callback(imgUrl);

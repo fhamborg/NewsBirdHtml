@@ -79,7 +79,7 @@ function TopicList() {
          });*/
 
         return "<p>" + topic.topTerms.join(" | ") + "</p>"
-                + TopicHandler.getCellCount(topic) + ' <i class="grid layout icon"></i> '
+                //+ TopicHandler.getCellCount(topic) + ' <i class="grid layout icon"></i> '
                 //+ topic.id + ' <i class="code icon"></i>'
                 + otherTopSentences;
     };
@@ -251,8 +251,8 @@ function TopicList() {
                         
    //console.log("mouseleave");                     
                     })*/
-                    .on("contextmenu", d3.contextMenu(that.menu))
-                    ;
+                  //  .on("contextmenu", d3.contextMenu(that.menu))
+                  //  ;
             var topicListElementContent = topicListElement.append("div").attr("class", "middle aligned content");
             
             topicListElementContent
@@ -304,7 +304,6 @@ function TopicList() {
                                 .attr("class", "ui tiny bordered image")
                                 .insert("img")
                                 .attr("src", imgUrl);
-
                                 
                       /*      d3.select("#" + topicListElementIdBase + curTopic.id)
                                     .insert("div")

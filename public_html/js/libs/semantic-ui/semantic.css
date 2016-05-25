@@ -689,7 +689,7 @@ input::selection {
   min-height: 1em;
   outline: none;
   border: none;
-  vertical-align: baseline;
+  vertical-align: middle;
   background: #e0e1e2 none;
   color: rgba(0, 0, 0, 0.6);
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -14464,7 +14464,7 @@ ol.ui.horizontal.list li:before,
   background: #ffffff;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
   margin: 1rem 0em;
-  padding: 1em 1em;
+  padding: 0.5em 0.5em;
   border-radius: 0.28571429rem;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
@@ -16278,6 +16278,7 @@ ol.ui.horizontal.list li:before,
 
 .ui.form .field > .selection.dropdown {
   width: 100%;
+grid  height: auto;
 }
 
 .ui.form .field > .selection.dropdown > .dropdown.icon {
@@ -16738,9 +16739,9 @@ ol.ui.horizontal.list li:before,
   content: '';
   top: 0%;
   left: 0%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(155, 155, 155, 0.8);
   width: 100%;
-  height: 100%;
+  height: 90%;
   z-index: 100;
 }
 
@@ -17365,8 +17366,8 @@ ol.ui.horizontal.list li:before,
   align-items: stretch;
   width: 100% !important;
   padding: 0rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0em;
+  padding-bottom: 0em;
 }
 
 /*-------------------
@@ -17376,8 +17377,8 @@ ol.ui.horizontal.list li:before,
 /* Vertical padding when no rows */
 
 .ui.grid > .column:not(.row) {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
 }
 
 .ui.grid > .row > .column {
@@ -27858,6 +27859,7 @@ body.dimmable > .dimmer {
 .ui.dropdown > input:not(.search):first-child,
 .ui.dropdown > select {
   display: none !important;
+
 }
 
 /*--------------
@@ -28337,7 +28339,7 @@ select.ui.dropdown {
 /* Search Selection */
 
 .ui.search.dropdown {
-  min-width: '';
+  min-width: 400px;
 }
 
 /* Search Dropdown */
@@ -30246,13 +30248,13 @@ a.ui.nag {
 .ui.popup:before {
   position: absolute;
   content: '';
-  width: 0.75em;
-  height: 0.75em;
+  width: 0.0em;
+  height: 0.0em;
   background: #ffffff;
+  z-index: 2;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  z-index: 2;
   box-shadow: 1px 1px 0px 0px #bababc;
 }
 
@@ -32159,7 +32161,7 @@ a.ui.nag {
 /* Whole Page */
 
 body.pushable {
-  background: #EEEEEE !important;
+  
 }
 
 /* Page Context */

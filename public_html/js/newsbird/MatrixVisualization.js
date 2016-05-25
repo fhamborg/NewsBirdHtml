@@ -429,6 +429,9 @@ function MatrixVisualization(par) {
                     if (code === "usa|united states"){
                         code = "us";
                     }
+                    if (code === "usa'united states'"){
+                        code = "us";
+                    }
                     if (code.length === 2) {
                         // we might have a country code in here, if not, the css class will not be defined and no icon is displayed
                         return "flag-icon flag-icon-" + code;

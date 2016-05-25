@@ -94,8 +94,11 @@ function QueryManager() {
         $('#queryBtn').click(function () {
             that.onSubmitQuery();
         });
-
-
+        
+        $('#cancelBtn').click(function () {
+            that.onCancelQuery();
+        });
+        
         $('#defaultsBtnQuery1').click(function () {
             // set defaults 1
             $('#rowDimTypeSelect').parent()
@@ -183,9 +186,11 @@ function QueryManager() {
     };
 
     QueryManager.prototype.sendQueryToServer = function (query) {
+        $('#cancelBtn').show();
         console.log("sending query: " + JSON.stringify(query));
         $.getJSON(that.url, "query=" + JSON.stringify(query), function (data) {
             $('#queryOptionsForm').toggleClass('loading');
+            $('#cancelBtn').hide();
 
             console.log("retrieved data from server (by query)");
 
@@ -200,10 +205,14 @@ function QueryManager() {
 
     QueryManager.prototype.onSubmitQuery = function () {
         $('#queryOptionsForm').toggleClass('loading');
-
         var query = this.getGuiQuery();
 
         this.sendQueryToServer(query);
+    };
+    
+    QueryManager.prototype.onCancelQuery = function () {
+        $('#queryOptionsForm').toggleClass('loading');
+        $('#cancelBtn').hide();
     };
 
     QueryManager.prototype.setUserQuery = function (fewRequiredTerms, additionalTerms) {
